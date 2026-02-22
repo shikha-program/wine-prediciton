@@ -37,4 +37,8 @@ input_data = pd.DataFrame({
 
 if st.button("Predict"):
     prediction = model.predict(input_data)[0]
-    st.success(f"Prediction: {prediction}")
+
+    if prediction == 1:
+        st.success("White Wine 🍷")
+    else:
+        st.error("Red Wine 🍷")
